@@ -153,22 +153,23 @@ yum install -y haproxy
     EOF
 
 ## Installation
-git clone git@github.com:hornjason/ocp4-vsphere.git
-cd ocp4-vsphere/
-cp terraform.tfvars.example terraform.tfvars
-cp ocp-4.2/install-config.yaml.example  ocp-4.2/install-config.yaml; cp ocp-4.2/install-config.yaml .
 
-// Install terraform 11.0.2 and jq
-// jq is in epel 
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install -y jq
-// Terraform 11.02 , repo doesn't work with newer versions of terraform
-wget https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip && unzip terraform_0.11.0_linux_amd64.zip -d /usr/local/bin
-// Edit install-config.yaml to generate ignition files
-
-// Edit terraform.tfvars
-
-// Run installation
+    git clone git@github.com:hornjason/ocp4-vsphere.git
+    cd ocp4-vsphere/
+    cp terraform.tfvars.example terraform.tfvars
+    cp ocp-4.2/install-config.yaml.example  ocp-4.2/install-config.yaml; cp ocp-4.2/install-config.yaml .
+    
+    // Install terraform 11.0.2 and jq
+    // jq is in epel 
+    yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    yum install -y jq
+    // Terraform 11.02 , repo doesn't work with newer versions of terraform
+    wget https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip && unzip terraform_0.11.0_linux_amd64.zip -d /usr/local/bin
+    // Edit install-config.yaml to generate ignition files
+    
+    // Edit terraform.tfvars
+    
+    // Run installation
 
 
 
@@ -335,7 +336,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2NjY4ODU5MSwxNDYyMDA5Mjk5LDE0Mj
-I1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3
-OSw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbLTE0ODE5MzQ2ODksLTY2NjY4ODU5MSwxND
+YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
+MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
