@@ -13,6 +13,7 @@ edit machine/ignition.tf;
 change gw = "local gw"
 change DNS1 = "dns server"
 
+    enter code here
 
 // ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
 cluster_id = "example-cluster"
@@ -144,6 +145,7 @@ A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwODgxNjkyNCw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
