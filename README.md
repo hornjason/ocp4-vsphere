@@ -3,6 +3,11 @@
 This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
+## Pre-Reqs
+### LB
+yum install -y haproxy
+
+### DNS
 
 ## Installation
 git clone git@github.com:hornjason/ocp4-vsphere.git
@@ -21,6 +26,8 @@ wget https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd6
 // Edit terraform.tfvars
 
 // Run installation
+
+
 
 
 git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
@@ -165,6 +172,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzNjk4Mjc5NCwxOTExMjgwMDI1LDQ5Mz
-Y3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
+eyJoaXN0b3J5IjpbMjI4NDgxNzM5LDE5MTEyODAwMjUsNDkzNj
+cxODA2LC01NjkyMjgxNzksNDQwNTMyNzBdfQ==
 -->
