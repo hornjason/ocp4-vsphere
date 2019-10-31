@@ -5,6 +5,8 @@ This repository follows the following article.
 
 
 ## Installation
+`git clone 
+
 Terraform 11.0.2
 jq
 
@@ -150,6 +152,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDc1Mjk3ODIsNDkzNjcxODA2LC01Nj
-kyMjgxNzksNDQwNTMyNzBdfQ==
+eyJoaXN0b3J5IjpbMTkxMTI4MDAyNSw0OTM2NzE4MDYsLTU2OT
+IyODE3OSw0NDA1MzI3MF19
 -->
