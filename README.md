@@ -9,6 +9,13 @@ yum install -y haproxy
 
 ### DNS
 
+    $ORIGIN apps.upi.example.com. 
+    * A 10.x.y.38 
+    * A 10.x.y.39 
+    * A 10.x.y.40 
+    $ORIGIN upi.example.com. 
+    _etcd-server-ssl._tcp SRV 0 10 2380 etcd-0 _etcd-server-ssl._tcp SRV 0 10 2380 etcd-1 _etcd-server-ssl._tcp SRV 0 10 2380 etcd-2 bootstrap-0 A 10.x.y.34 control-plane-0 A 10.x.y.35 control-plane-1 A 10.x.y.36 control-plane-2 A 10.x.y.37 api A 10.x.y.34 api A 10.x.y.35 api A 10.x.y.36 api A 10.x.y.37 api-int A 10.x.y.34 api-int A 10.x.y.35 api-int A 10.x.y.36 api-int A 10.x.y.37 etcd-0 A 10.x.y.35 etcd-1 A 10.x.y.36 etcd-2 A 10.x.y.37 compute-0 A 10.x.y.38 compute-1 A 10.x.y.39 compute-2 A 10.x.y.40
+
 ## Installation
 git clone git@github.com:hornjason/ocp4-vsphere.git
 cd ocp4-vsphere/
@@ -172,6 +179,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI4NDgxNzM5LDE5MTEyODAwMjUsNDkzNj
-cxODA2LC01NjkyMjgxNzksNDQwNTMyNzBdfQ==
+eyJoaXN0b3J5IjpbLTEyMzAxOTYzMjYsMTkxMTI4MDAyNSw0OT
+M2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
