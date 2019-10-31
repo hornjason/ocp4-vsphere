@@ -14,12 +14,11 @@ change gw = "local gw"
 change DNS1 = "dns server"
 
 
-`enter code here`// ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
-cluster_id = "example-cluster"
+`// ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
+cluster_id = "example-cluster"`
 
 // Domain of the cluster. This should be "${cluster_id}.${base_domain}".
 cluster_domain = "example-cluster.devcluster.openshift.com"
-
 // Base domain from which the cluster domain is a subdomain.
 base_domain = "devcluster.openshift.com"
 
@@ -95,7 +94,7 @@ control_plane_ips = ["10.0.0.20", "10.0.0.21", "10.0.0.22"]
 // The IP addresses to assign to the compute VMs. The length of this list must
 // match the value of compute_count.
 compute_ips = ["10.0.0.30", "10.0.0.31", "10.0.0.32"]
-
+`
 ## SmartyPants
 
 SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
@@ -146,5 +145,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MTU2ODcyMyw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbMTkyNDc4OTM1NCw0NDA1MzI3MF19
 -->
