@@ -8,7 +8,9 @@ This repository follows the following article.
 git clone git@github.com:hornjason/ocp4-vsphere.git
 cd ocp4-vsphere/
 cp terraform.tfvars.example terraform.tfvars
-cp ocp-4.2/install-config.yaml.example  ocp-4.2/install-config.yaml1 install-config.yaml1
+cp ocp-4.2/install-config.yaml.example  ocp-4.2/install-config.yaml; cp ocp-4.2/install-config.yaml .
+
+// Install terraform 11.0.2 and jq
 
 Terraform 11.0.2
 jq
@@ -155,6 +157,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTkzNTU1MzksMTkxMTI4MDAyNSw0OT
-M2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbMTMzNTgzMjU4MCwxOTExMjgwMDI1LDQ5Mz
+Y3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
