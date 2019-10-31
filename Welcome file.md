@@ -3,8 +3,13 @@
 This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
-Terraform 
+Terraform 11.0.2
+jq
 
+git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
+
+cd ocp4-vsphere
+edit machine/ignition.tf;  # change gw = "local gw"
 
 ## Create files and folders
 
@@ -141,5 +146,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNjg3NzI4MF19
+eyJoaXN0b3J5IjpbLTE0MjM0MjI2MDFdfQ==
 -->
