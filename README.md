@@ -78,9 +78,9 @@ backend openshift-api-server
     balance source
     mode tcp
     server bootstrap ${BOOTSTRAP_IP}:6443 check
-    server master0 ${MASTER_IP}:6443 check
-    server master1 ${MASTER_IP}:6443 check
-    server master2 ${MASTER_IP}:6443 check
+    server master0 ${MASTER0_IP}:6443 check
+    server master1 ${MASTER1_IP}:6443 check
+    server master2 ${MASTER2_IP}:6443 check
 
 frontend machine-config-server
     bind *:22623
@@ -92,9 +92,9 @@ backend machine-config-server
     balance source
     mode tcp
     server bootstrap ${BOOTSTRAP_IP}:22623 check
-    server master0 ${MASTER_IP}:22623 check
-    server master1 ${MASTER_IP}2:22623 check
-    server master2 ${MASTER_IP}:22623 check
+    server master0 ${MASTER0_IP}:22623 check
+    server master1 ${MASTER1_IP}2:22623 check
+    server master2 ${MASTER2_IP}:22623 check
 
 frontend ingress-http
     bind *:80
@@ -105,9 +105,9 @@ frontend ingress-http
 backend ingress-http
     balance source
     mode tcp
-    server worker0-http-router0 ${COM80 check
-    server worker1-http-router1 192.168.1.55:80 check
-    server worker2-http-router2 192.168.1.56:80 check
+    server worker0-http-router0 ${COMPUTE0_IP}:80 check
+    server worker1-http-router1 ${COMPUTE1_IP}:80 check
+    server worker2-http-router2 ${COMPUTE2_IP}:80 check
 
 frontend ingress-https
     bind *:443
@@ -118,9 +118,9 @@ frontend ingress-https
 backend ingress-https
     balance source
     mode tcp
-    server worker0-https-router0 192.168.1.54:443 check
-    server worker1-https-router1 192.168.1.55:443 check
-    server worker2-https-router2 192.168.1.56:443 check
+    server worker0-https-router0 ${COMPUTE0_IP}:443 check
+    server worker1-https-router1 ${COMPUTE1_IP}:443 check
+    server worker2-https-router2 ${COMPUTE2_IP}:443 check
 
 #---------------------------------------------------------------------
 EOF
@@ -129,9 +129,9 @@ EOF
     yum install -y named
     cat > /var/named/zonefile.db << EOF
     $ORIGIN apps.upi.example.com. 
-    * A 10.x.y.38 
-    * A 10.x.y.39 
-    * A 10.x.y.40 
+    * A  ${COMPUTE0_IP}:
+    * A  ${COMPUTE0_IP}:
+    * A  ${COMPUTE0_IP}:
     $ORIGIN upi.example.com. 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-0 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-1 
@@ -319,7 +319,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk4MDI0NDAzLDE0MjI1NDQ5NTgsMTkxMT
-I4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
-
+eyJoaXN0b3J5IjpbMTI2NDI0ODA5NiwxNDIyNTQ0OTU4LDE5MT
+EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
+fQ==
 -->
