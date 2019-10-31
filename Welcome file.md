@@ -1,7 +1,9 @@
 # Installation of vSphere on OCP4
 # Pre-Reqs
-Terraform 11: https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip
+This repository follows the following article.
+[https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
+Terraform 
 
 
 ## Create files and folders
@@ -139,5 +141,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzUyNDI0MTNdfQ==
+eyJoaXN0b3J5IjpbMTEzNjg3NzI4MF19
 -->
