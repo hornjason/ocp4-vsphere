@@ -169,11 +169,14 @@ yum install -y haproxy
     
     // Edit terraform.tfvars
     
-    // Run installation
+    // Create ignition files
     openshift-installation create ignition-configs --dir ocp-4.2/
-    
 
+    // Run installation
+    terraform init .
+    terraform apply -auto-approve
 
+   // 
 
 git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
 
@@ -337,7 +340,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NDI3Mjk5NCwtNjY2Njg4NTkxLDE0Nj
+eyJoaXN0b3J5IjpbMTU1MTcwMzM5MCwtNjY2Njg4NTkxLDE0Nj
 IwMDkyOTksMTQyMjU0NDk1OCwxOTExMjgwMDI1LDQ5MzY3MTgw
 NiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
