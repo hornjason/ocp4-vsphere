@@ -170,7 +170,8 @@ yum install -y haproxy
     // Edit terraform.tfvars
     
     // Run installation
-
+    openshift-installation create ignition-configs --dir ocp-4.2/
+    
 
 
 
@@ -336,7 +337,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODE5MzQ2ODksLTY2NjY4ODU5MSwxND
-YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
-MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbMTA4NDI3Mjk5NCwtNjY2Njg4NTkxLDE0Nj
+IwMDkyOTksMTQyMjU0NDk1OCwxOTExMjgwMDI1LDQ5MzY3MTgw
+NiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
