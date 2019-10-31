@@ -1,0 +1,6 @@
+.terraform
+terraform.tfstate**
+terraform.tfvars
+.**log
+install-config.yaml
+install-config.yml
