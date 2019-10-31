@@ -16,7 +16,12 @@ yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarc
 yum install -y jq
 // Terraform 11.02 , repo doesn't work with newer versions of terraform
 wget https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip && unzip terraform_0.11.0_linux_amd64.zip -d /usr/local/bin
-// Edit ins
+// Edit install-config.yaml to generate ignition files
+
+// Edit terraform.tfvars
+
+// Run installation
+
 
 git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
 
@@ -160,6 +165,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMTkxMzEyMiwxOTExMjgwMDI1LDQ5Mz
+eyJoaXN0b3J5IjpbLTQzNjk4Mjc5NCwxOTExMjgwMDI1LDQ5Mz
 Y3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
