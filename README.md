@@ -37,8 +37,7 @@ global
     stats socket /var/lib/haproxy/stats
 
 #---------------------------------------------------------------------
-# common defaults that all the 'listen' and 'backend' sections will
-# use if not designated in their block
+
 #---------------------------------------------------------------------
 defaults
     mode                    http
@@ -137,20 +136,20 @@ EOF
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-1 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-2 
     bootstrap-0 A ${BOOTSTRAP_IP}
-    control-plane-0 A ${MASTER0_IP 
-    control-plane-1 A ${MASTER0_IP 
-    control-plane-2 A ${MASTER0_IP
+    control-plane-0 A ${MASTER0_IP}
+    control-plane-1 A ${MASTER1_IP} 
+    control-plane-2 A ${MASTER2_IP}
     api A ${BOOTSTRAP_IP}
-    api A ${MASTER0_IP 
-    api A ${MASTER0_IP 
-    api A ${MASTER0_IP 
+    api A ${MASTER0_IP}
+    api A ${MASTER1_IP}
+    api A ${MASTER2_IP} 
     api-int A ${BOOTSTRAP_IP}
-    api-int A ${MASTER0_IP
-    api-int A ${MASTER0_IP
-    api-int A ${MASTER0_IP 
-    etcd-0 A 10.x.y.35 
-    etcd-1 A 10.x.y.36 
-    etcd-2 A 10.x.y.37 
+    api-int A ${MASTER0_IP}
+    api-int A ${MASTER1_IP}
+    api-int A ${MASTER2_IP} 
+    etcd-0 A ${MASTER0_IP} 
+    etcd-1 A ${MASTER1_IP}
+    etcd-2 A ${MASTER2_IP} 
     compute-0 A ${COMPUTE0_IP}
     compute-1 A ${COMPUTE1_IP}
     compute-2 A ${COMPUTE2_IP}
@@ -319,7 +318,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5MzI3NzgzNSwxNDIyNTQ0OTU4LDE5MT
-EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
-fQ==
+eyJoaXN0b3J5IjpbLTE3MjczMDg3NDgsMTQyMjU0NDk1OCwxOT
+ExMjgwMDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcw
+XX0=
 -->
