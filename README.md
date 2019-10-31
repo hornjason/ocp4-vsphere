@@ -9,7 +9,7 @@ yum install -y haproxy
 
 ### DNS
 
-    cat >EOF<<
+    cat E
     $ORIGIN apps.upi.example.com. 
     * A 10.x.y.38 
     * A 10.x.y.39 
@@ -200,6 +200,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMjU0NDk1OCwxOTExMjgwMDI1LDQ5Mz
-Y3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
+eyJoaXN0b3J5IjpbLTE1OTA3OTIwMDUsMTQyMjU0NDk1OCwxOT
+ExMjgwMDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcw
+XX0=
 -->
