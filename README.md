@@ -12,6 +12,7 @@ export master2_ip=
 export compute0_ip=
 export compute1_ip=
 export compute2_ip=
+
 ### HAPROXY ( instead of using DNS)
 yum install -y haproxy
 
@@ -178,7 +179,7 @@ cd ocp4-vsphere
 edit machine/ignition.tf;
 change gw = "local gw"
 change DNS1 = "dns server"
-
+## terraform.tfvars
 
     // ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
     cluster_id = "example-cluster"
@@ -262,7 +263,48 @@ change DNS1 = "dns server"
     // match the value of compute_count.
     compute_ips = ["10.0.0.30", "10.0.0.31", "10.0.0.32"]
 
-\
+
+## install-config.yaml
+
+    apiVersion: v1
+    ## The base domain of the cluster. All DNS records will be sub-domains of this base and will also include the cluster name.
+    baseDomain: foo.bar
+    compute:
+    - hyperthreading: Enabled
+      name: worker
+      replicas: 0
+    controlPlane:
+      hyperthreading: Enabled
+      name: master
+      replicas: 3
+    metadata:
+      ## The name for the cluster
+      name: ocp4
+    networking:
+      clusterNetworks:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+      machineCIDR: "192.168.1.0/24" # where your VMs will live
+      networkType: OpenShiftSDN
+      serviceNetwork:
+      - 172.30.0.0/16
+    platform:
+      vsphere:
+        ## The hostname or IP address of the vCenter
+        vcenter: vcenter.foo.bar
+        ## The name of the user for accessing the vCenter
+        username: "username@foo.bar"
+        ## The password associated with the user
+        password: "password"
+        ## The datacenter in the vCenter
+        datacenter: DC1
+        ## The default datastore to use.
+        defaultDatastore: DATASTORE
+    ## The pull secret that provides components in the cluster access to images for OpenShift components.
+    pullSecret: ''
+    ## The default SSH key that will be programmed for `core` user.
+    sshKey: ''
+
 ## SmartyPants
 
 SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
@@ -314,7 +356,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NDE0MDcyNSwxNDIyNTQ0OTU4LDE5MT
+eyJoaXN0b3J5IjpbMTQ3NzI4NTg3MiwxNDIyNTQ0OTU4LDE5MT
 EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
 fQ==
 -->
