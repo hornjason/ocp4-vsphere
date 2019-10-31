@@ -37,7 +37,7 @@ variable "vsphere_folder" {
   description = "This is the folder to store all created objects in vSphere."
 }
 
-}variable "vm_template" {
+variable "vm_template" {
   type        = "string"
   description = "This is the name of the VM template to clone."
 }
