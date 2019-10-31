@@ -3,6 +3,8 @@
 This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
+
+## Installation
 Terraform 11.0.2
 jq
 
@@ -148,6 +150,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNT
-MyNzBdfQ==
+eyJoaXN0b3J5IjpbLTE3MDc1Mjk3ODIsNDkzNjcxODA2LC01Nj
+kyMjgxNzksNDQwNTMyNzBdfQ==
 -->
