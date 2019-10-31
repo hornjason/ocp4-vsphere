@@ -9,7 +9,10 @@ jq
 git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
 
 cd ocp4-vsphere
-edit machine/ignition.tf;  # change gw = "local gw"
+edit machine/ignition.tf;
+change gw = "local gw"
+change DNS1 = "dns server"
+
 
 
 
