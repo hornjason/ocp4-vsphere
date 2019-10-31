@@ -5,7 +5,9 @@ This repository follows the following article.
 
 
 ## Installation
-`git clone 
+git clone git@github.com:hornjason/ocp4-vsphere.git
+cd ocp4-vsphere/
+cp
 
 Terraform 11.0.2
 jq
@@ -152,6 +154,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMTI4MDAyNSw0OTM2NzE4MDYsLTU2OT
-IyODE3OSw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbLTE4MTc3NTczNSwxOTExMjgwMDI1LDQ5Mz
+Y3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
