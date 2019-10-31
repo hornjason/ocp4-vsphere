@@ -4,10 +4,12 @@ This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
 ## Pre-Reqs
-### LB
+### HAPROXY ( instead of using DNS)
 yum install -y haproxy
+cat > /etc/haproxy/haproxy.cfg <<EOF
 
-### DNS
+
+### DNS ( Can LoadBalance for testing )
     yum install -y named
     cat > /var/named/zonefile.db << EOF
     $ORIGIN apps.upi.example.com. 
@@ -201,7 +203,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNzUyMjIxMCwxNDIyNTQ0OTU4LDE5MT
-EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
-fQ==
+eyJoaXN0b3J5IjpbNjYyODg2Njg5LDE0MjI1NDQ5NTgsMTkxMT
+I4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
+
 -->
