@@ -14,8 +14,8 @@ change gw = "local gw"
 change DNS1 = "dns server"
 
 
-`// ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
-cluster_id = "example-cluster"`
+// ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
+cluster_id = "example-cluster"
 
 // Domain of the cluster. This should be "${cluster_id}.${base_domain}".
 cluster_domain = "example-cluster.devcluster.openshift.com"
@@ -145,5 +145,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkyNDc4OTM1NCw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbMTgwODgxNjkyNCw0NDA1MzI3MF19
 -->
