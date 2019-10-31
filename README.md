@@ -4,7 +4,14 @@ This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
 ## Pre-Reqs
-## Compute / 
+## Bootstrap / Master / Worker IPs
+export bootstrap_ip=
+export master0_ip=
+export master1_ip=
+export master2_ip=
+export compute0_ip=
+export compute1_ip=
+export compute2_ip=
 ### HAPROXY ( instead of using DNS)
 yum install -y haproxy
 
@@ -307,7 +314,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQwMDY0NDQ5LDE0MjI1NDQ5NTgsMTkxMT
-I4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
-
+eyJoaXN0b3J5IjpbMTM0NDE0MDcyNSwxNDIyNTQ0OTU4LDE5MT
+EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
+fQ==
 -->
