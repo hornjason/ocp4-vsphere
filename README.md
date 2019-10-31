@@ -13,13 +13,13 @@ edit machine/ignition.tf;
 change gw = "local gw"
 change DNS1 = "dns server"
 
-    enter code here
 
     // ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
     cluster_id = "example-cluster"
     
     // Domain of the cluster. This should be "${cluster_id}.${base_domain}".
     cluster_domain = "example-cluster.devcluster.openshift.com"
+    
     // Base domain from which the cluster domain is a subdomain.
     base_domain = "devcluster.openshift.com"
     
@@ -148,6 +148,6 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NzY0MTI5MywtNTY5MjI4MTc5LDQ0MD
-UzMjcwXX0=
+eyJoaXN0b3J5IjpbNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNT
+MyNzBdfQ==
 -->
