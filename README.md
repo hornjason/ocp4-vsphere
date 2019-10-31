@@ -7,7 +7,123 @@ This repository follows the following article.
 ### HAPROXY ( instead of using DNS)
 yum install -y haproxy
 cat > /etc/haproxy/haproxy.cfg <<EOF
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    # to have these messages end up in /var/log/haproxy.log you will
+    # need to:
+    #
+    # 1) configure syslog to accept network log events.  This is done
+    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
+    #    /etc/sysconfig/syslog
+    #
+    # 2) configure local2 events to go to the /var/log/haproxy.log
+    #   file. A line like the following can be added to
+    #   /etc/sysconfig/syslog
+    #
+    #    local2.*                       /var/log/haproxy.log
+    #
+    log         127.0.0.1 local2
 
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+    daemon
+
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+
+#---------------------------------------------------------------------
+
+listen stats
+    bind :9000
+    mode http
+    stats enable
+    stats uri /
+    monitor-uri /healthz
+
+
+frontend openshift-api-server
+    bind *:6443
+    default_backend openshift-api-server
+    mode tcp
+    option tcplog
+
+backend openshift-api-server
+    balance source
+    mode tcp
+    server bootstrap ${BOOTSTRAP_IP}:6443 check
+    server master0 ${MASTER_IP}:6443 check
+    server master1 ${MASTER_IP}:6443 check
+    server master2 ${MASTER_IP}:6443 check
+
+frontend machine-config-server
+    bind *:22623
+    default_backend machine-config-server
+    mode tcp
+    option tcplog
+
+backend machine-config-server
+    balance source
+    mode tcp
+    server bootstrap ${BOOTSTRAP_IP}:22623 check
+    server master0 ${MASTER_IP}:22623 check
+    server master1 ${MASTER_IP}2:22623 check
+    server master2 ${MASTER_IP}:22623 check
+
+frontend ingress-http
+    bind *:80
+    default_backend ingress-http
+    mode tcp
+    option tcplog
+
+backend ingress-http
+    balance source
+    mode tcp
+    server worker0-http-router0 ${COM80 check
+    server worker1-http-router1 192.168.1.55:80 check
+    server worker2-http-router2 192.168.1.56:80 check
+
+frontend ingress-https
+    bind *:443
+    default_backend ingress-https
+    mode tcp
+    option tcplog
+
+backend ingress-https
+    balance source
+    mode tcp
+    server worker0-https-router0 192.168.1.54:443 check
+    server worker1-https-router1 192.168.1.55:443 check
+    server worker2-https-router2 192.168.1.56:443 check
+
+#---------------------------------------------------------------------
+EOF
 
 ### DNS ( Can LoadBalance for testing )
     yum install -y named
@@ -203,7 +319,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYyODg2Njg5LDE0MjI1NDQ5NTgsMTkxMT
+eyJoaXN0b3J5IjpbODk4MDI0NDAzLDE0MjI1NDQ5NTgsMTkxMT
 I4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 
 -->
