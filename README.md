@@ -130,30 +130,30 @@ EOF
     cat > /var/named/zonefile.db << EOF
     $ORIGIN apps.upi.example.com. 
     * A  ${COMPUTE0_IP}:
-    * A  ${COMPUTE0_IP}:
-    * A  ${COMPUTE0_IP}:
+    * A  ${COMPUTE1_IP}:
+    * A  ${COMPUTE2_IP}:
     $ORIGIN upi.example.com. 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-0 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-1 
     _etcd-server-ssl._tcp SRV 0 10 2380 etcd-2 
-    bootstrap-0 A 10.x.y.34 
-    control-plane-0 A 10.x.y.35 
-    control-plane-1 A 10.x.y.36 
-    control-plane-2 A 10.x.y.37 
-    api A 10.x.y.34 
-    api A 10.x.y.35 
-    api A 10.x.y.36 
-    api A 10.x.y.37 
-    api-int A 10.x.y.34
-    api-int A 10.x.y.35
-    api-int A 10.x.y.36 
-    api-int A 10.x.y.37 
+    bootstrap-0 A ${BOOTSTRAP_IP}
+    control-plane-0 A ${MASTER0_IP 
+    control-plane-1 A ${MASTER0_IP 
+    control-plane-2 A ${MASTER0_IP
+    api A ${BOOTSTRAP_IP}
+    api A ${MASTER0_IP 
+    api A ${MASTER0_IP 
+    api A ${MASTER0_IP 
+    api-int A ${BOOTSTRAP_IP}
+    api-int A ${MASTER0_IP
+    api-int A ${MASTER0_IP
+    api-int A ${MASTER0_IP 
     etcd-0 A 10.x.y.35 
     etcd-1 A 10.x.y.36 
     etcd-2 A 10.x.y.37 
-    compute-0 A 10.x.y.38 
-    compute-1 A 10.x.y.39 
-    compute-2 A 10.x.y.40
+    compute-0 A ${COMPUTE0_IP}
+    compute-1 A ${COMPUTE1_IP}
+    compute-2 A ${COMPUTE2_IP}
     EOF
 
 ## Installation
@@ -319,7 +319,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NDI0ODA5NiwxNDIyNTQ0OTU4LDE5MT
+eyJoaXN0b3J5IjpbLTQ5MzI3NzgzNSwxNDIyNTQ0OTU4LDE5MT
 EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
 fQ==
 -->
