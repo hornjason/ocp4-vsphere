@@ -8,8 +8,8 @@ This repository follows the following article.
 yum install -y haproxy
 
 ### DNS
-
-    cat E
+    yum install -y named
+    cat > /var/named/zonefile.db << EOF
     $ORIGIN apps.upi.example.com. 
     * A 10.x.y.38 
     * A 10.x.y.39 
@@ -36,6 +36,7 @@ yum install -y haproxy
     compute-0 A 10.x.y.38 
     compute-1 A 10.x.y.39 
     compute-2 A 10.x.y.40
+    EOF
 
 ## Installation
 git clone git@github.com:hornjason/ocp4-vsphere.git
@@ -200,7 +201,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTA3OTIwMDUsMTQyMjU0NDk1OCwxOT
-ExMjgwMDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcw
-XX0=
+eyJoaXN0b3J5IjpbLTUyNzUyMjIxMCwxNDIyNTQ0OTU4LDE5MT
+EyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksNDQwNTMyNzBd
+fQ==
 -->
