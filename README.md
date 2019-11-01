@@ -175,8 +175,11 @@ yum install -y haproxy
     // Run installation
     terraform init .
     terraform apply -auto-approve
-
-   // 
+    openshift-install --dir ~/vsphere wait-for bootstrap-complete
+    terraform apply -auto-approve -var 'bootstrap_complete=true'
+    
+    // Remove 
+    terraform destroy -auto-approve
 
 git clone [https://github.com/hornjason/ocp4-vsphere](https://github.com/hornjason/ocp4-vsphere)
 
@@ -340,7 +343,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1MTcwMzM5MCwtNjY2Njg4NTkxLDE0Nj
-IwMDkyOTksMTQyMjU0NDk1OCwxOTExMjgwMDI1LDQ5MzY3MTgw
-NiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
+eyJoaXN0b3J5IjpbLTIwNTc1ODU3OTMsLTY2NjY4ODU5MSwxND
+YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
+MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
