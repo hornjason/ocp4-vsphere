@@ -4,3 +4,7 @@ terraform.tfvars
 .**log
 install-config.yaml
 install-config.yml
+*.log
+*.ign
+*.json
+auth

@@ -12,7 +12,7 @@ data "vsphere_datacenter" "dc" {
 module "folder" {
   source = "./folder"
 
-  path          = "${var.cluster_id}"
+  path          = "${var.vsphere_folder}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
