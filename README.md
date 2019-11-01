@@ -9,7 +9,19 @@ This repository follows the following article.
     Import RHCOS OVS into vCenter
     [https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/](https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/)
 
+Default naming of VMs is as follows;
+
+    boostrap-0
+    control-plane-0
+    control-plane-1
+    control-plane-2
+    
+    compute-0
+    compute-1
+    compute-2
+
 ### Bootstrap / Master / Worker IPs
+
 
     export bootstrap_ip=
     export master0_ip=
@@ -351,7 +363,7 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njc4OTY3MTgsLTY2NjY4ODU5MSwxND
-YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
-MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
+eyJoaXN0b3J5IjpbLTE0MTUwOTg5MSwtMTc2Nzg5NjcxOCwtNj
+Y2Njg4NTkxLDE0NjIwMDkyOTksMTQyMjU0NDk1OCwxOTExMjgw
+MDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
 -->
