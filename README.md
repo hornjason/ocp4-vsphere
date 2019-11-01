@@ -5,15 +5,19 @@ This repository follows the following article.
 
 ## Pre-Reqs
 ### RHCOS OVA
-Downl
+
+    Import RHCOS OVS into vCenter
+    [https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/](https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/)
+
 ### Bootstrap / Master / Worker IPs
-export bootstrap_ip=
-export master0_ip=
-export master1_ip=
-export master2_ip=
-export compute0_ip=
-export compute1_ip=
-export compute2_ip=
+
+    export bootstrap_ip=
+    export master0_ip=
+    export master1_ip=
+    export master2_ip=
+    export compute0_ip=
+    export compute1_ip=
+    export compute2_ip=
 
 ### HAPROXY ( instead / along with DNS)
 yum install -y haproxy
@@ -345,8 +349,9 @@ B --> D{Rhombus}
 C --> D
 ```
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODQwODMxMDQsLTY2NjY4ODU5MSwxND
+eyJoaXN0b3J5IjpbLTE3Njc4OTY3MTgsLTY2NjY4ODU5MSwxND
 YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
 MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
