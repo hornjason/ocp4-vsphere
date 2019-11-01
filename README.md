@@ -4,7 +4,9 @@ This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
 
 ## Pre-Reqs
-## Bootstrap / Master / Worker IPs
+### RHCOS OVA
+Downl
+### Bootstrap / Master / Worker IPs
 export bootstrap_ip=
 export master0_ip=
 export master1_ip=
@@ -159,7 +161,7 @@ yum install -y haproxy
     cp terraform.tfvars.example terraform.tfvars
     cp ocp-4.2/install-config.yaml.example  ocp-4.2/install-config.yaml; cp ocp-4.2/install-config.yaml .
     
-    // Install terraform 11.0.2 and jq
+    // Install terraform 11.0.2 / jq / openshift-install / openshift-client / 
     // jq is in epel 
     yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum install -y jq
@@ -177,6 +179,7 @@ yum install -y haproxy
     terraform apply -auto-approve
     openshift-install --dir ~/vsphere wait-for bootstrap-complete
     terraform apply -auto-approve -var 'bootstrap_complete=true'
+    openshift-install --dir ~/vsphere wait-for install-complete
     
     // Remove 
     terraform destroy -auto-approve
@@ -343,7 +346,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTc1ODU3OTMsLTY2NjY4ODU5MSwxND
+eyJoaXN0b3J5IjpbLTIwODQwODMxMDQsLTY2NjY4ODU5MSwxND
 YyMDA5Mjk5LDE0MjI1NDQ5NTgsMTkxMTI4MDAyNSw0OTM2NzE4
 MDYsLTU2OTIyODE3OSw0NDA1MzI3MF19
 -->
