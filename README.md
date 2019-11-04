@@ -336,7 +336,10 @@ change DNS1 = "dns server"
     sshKey: ''
 
 ## Scaling
-To add additional nodes 
+To add additional nodes to a successful installation can be accomplished by editing the terraform.tfvars and changing the variable 
+
+> bootstrap_complete
+
 ## UML diagrams
 
 You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
@@ -365,7 +368,7 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzNTYzNTY5NCwtMTQxNTA5ODkxLC0xNz
+eyJoaXN0b3J5IjpbMTk3NDc4NDc4MiwtMTQxNTA5ODkxLC0xNz
 Y3ODk2NzE4LC02NjY2ODg1OTEsMTQ2MjAwOTI5OSwxNDIyNTQ0
 OTU4LDE5MTEyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksND
 QwNTMyNzBdfQ==
