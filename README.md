@@ -335,6 +335,8 @@ change DNS1 = "dns server"
     ## The default SSH key that will be programmed for `core` user.
     sshKey: ''
 
+## Scaling
+To add additional nodes 
 ## UML diagrams
 
 You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
@@ -363,7 +365,8 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTUwOTg5MSwtMTc2Nzg5NjcxOCwtNj
-Y2Njg4NTkxLDE0NjIwMDkyOTksMTQyMjU0NDk1OCwxOTExMjgw
-MDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LDQ0MDUzMjcwXX0=
+eyJoaXN0b3J5IjpbMTYzNTYzNTY5NCwtMTQxNTA5ODkxLC0xNz
+Y3ODk2NzE4LC02NjY2ODg1OTEsMTQ2MjAwOTI5OSwxNDIyNTQ0
+OTU4LDE5MTEyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksND
+QwNTMyNzBdfQ==
 -->
