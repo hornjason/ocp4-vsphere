@@ -336,9 +336,10 @@ change DNS1 = "dns server"
     sshKey: ''
 
 ## Scaling
-To add additional nodes to a successful installation can be accomplished by editing the terraform.tfvars and changing the variable 
+To add additional nodes to a successful installation can be accomplished by editing the terraform.tfvars and changing the bootstrap_complete variable to True and adding the additional IPs for all new nodes being added, either control-plane or worker.
 
-> bootstrap_complete
+> bootstrap_complete = "true"
+> compute_ips = ["10.0.0.30", "10.0.0.31", "10.0.0.32", ]
 
 ## UML diagrams
 
@@ -368,8 +369,8 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NDc4NDc4MiwtMTQxNTA5ODkxLC0xNz
-Y3ODk2NzE4LC02NjY2ODg1OTEsMTQ2MjAwOTI5OSwxNDIyNTQ0
-OTU4LDE5MTEyODAwMjUsNDkzNjcxODA2LC01NjkyMjgxNzksND
-QwNTMyNzBdfQ==
+eyJoaXN0b3J5IjpbMTgyMTAxNDIyLC0xNDE1MDk4OTEsLTE3Nj
+c4OTY3MTgsLTY2NjY4ODU5MSwxNDYyMDA5Mjk5LDE0MjI1NDQ5
+NTgsMTkxMTI4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0ND
+A1MzI3MF19
 -->
