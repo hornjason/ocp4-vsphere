@@ -72,6 +72,10 @@ ipam_token = "TOKEN_FOR_THE_IPAM_SERVER"
 // Set bootstrap_ip, control_plane_ip, and compute_ip if you want to use static
 // IPs reserved someone else, rather than the IPAM server.
 
+// False is default and will create the bootstrap VM
+// True is used when scaling up compute nodes after installation.
+bootstrap_complete = "False"
+
 // The IP address to assign to the bootstrap VM.
 // These are on the same network as 'machine_cidr'
 bootstrap_ip = "10.0.0.10" 
