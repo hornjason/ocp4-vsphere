@@ -342,8 +342,9 @@ To add additional nodes to a successful installation can be accomplished by edit
 > compute_ips = ["10.0.0.30", "10.0.0.31", "10.0.0.32", **"NEWNODEIP"**]
 > 
 
-Once complete run terraform plan . in the folder used for UPI installaiton previously
-
+Once complete run terraform plan . in the folder used for UPI installation previously
+> terraform plan 
+This should show additions to the infrastructure.
 ## UML diagrams
 
 You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
@@ -372,8 +373,8 @@ C --> D
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUxMDgwOTAzLC0xNDE1MDk4OTEsLTE3Nj
-c4OTY3MTgsLTY2NjY4ODU5MSwxNDYyMDA5Mjk5LDE0MjI1NDQ5
-NTgsMTkxMTI4MDAyNSw0OTM2NzE4MDYsLTU2OTIyODE3OSw0ND
-A1MzI3MF19
+eyJoaXN0b3J5IjpbLTE0ODMxNDMyNDQsLTE0MTUwOTg5MSwtMT
+c2Nzg5NjcxOCwtNjY2Njg4NTkxLDE0NjIwMDkyOTksMTQyMjU0
+NDk1OCwxOTExMjgwMDI1LDQ5MzY3MTgwNiwtNTY5MjI4MTc5LD
+Q0MDUzMjcwXX0=
 -->
