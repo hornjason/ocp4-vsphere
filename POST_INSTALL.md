@@ -19,7 +19,8 @@ folder            = ocp-test/test
 
 [VirtualCenter "vceneter.foo.bar"]
 datacenters = DC1
-EOF```
+EOF
+```
 
 * Base64 encode it 
 cat cloud.txt|base64 | tr -d '\n'
