@@ -26,7 +26,7 @@ EOF
 cat cloud.txt|base64 | tr -d '\n'
 
 * example
-'''
+```
 NEW=$( base64 cloud.txt| tr -d '\n' )
 for i in worker master; do
 cat <<EOF> machine_configs_${i}-cloud-vsphere.yaml
@@ -49,7 +49,7 @@ spec:
         path: /etc/kubernetes/cloud.conf
 EOF
 done
-'''
+```
 oc create -f  machine_configs_worker-cloud-vsphere.yaml
 oc create -f  machine_configs_master-cloud-vsphere.yaml
 
