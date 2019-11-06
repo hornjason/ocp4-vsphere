@@ -26,6 +26,8 @@ vsphere_datacenter = "dc1"
 vsphere_datastore = "nvme-ds1"
 
 // Name of the vSphere folder that will be created and used to store all created objects.
+// If this is changed to something OTHER than the cluster.id, the storageClass will need to be updated
+// Follow the procedure for applying new master/worker machineConfigs in the README
 vsphere_folder = "Folder Name"
 
 // Name of the VM template to clone to create VMs for the cluster. The dev cluster has a template named "rhcos-latest".
