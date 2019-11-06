@@ -1,8 +1,8 @@
- [TOC]:
 
 
 
 # Installation of vSphere on OCP4
+\
 # Pre-Reqs
 This repository follows the following article.
 [https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/](https://blog.openshift.com/deploying-a-user-provisioned-infrastructure-environment-for-openshift-4-1-on-vsphere/)
