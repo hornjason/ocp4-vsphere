@@ -30,11 +30,13 @@ resource "vsphere_virtual_machine" "vm" {
 
   network_interface {
     network_id = "${data.vsphere_network.network.id}"
+    use_static_mac = "${var.use_mac}"
+    mac_address = "${var.mac[count.index]}"
   }
 
   disk {
     label            = "disk0"
-    size             = 20
+    size             = 60
     thin_provisioned = "${data.vsphere_virtual_machine.template.disks.0.thin_provisioned}"
   }
 

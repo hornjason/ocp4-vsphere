@@ -83,6 +83,11 @@ variable "machine_cidr" {
   type = "string"
 }
 
+variable "use_static_mac" {
+  type    = "string"
+  default = "false"
+}
+
 /////////
 // Bootstrap machine variables
 /////////
@@ -101,6 +106,10 @@ variable "bootstrap_ip" {
   default = ""
 }
 
+variable "bootstrap_mac" {
+  type    = "string"
+  default = ""
+}
 ///////////
 // Control Plane machine variables
 ///////////
@@ -119,6 +128,10 @@ variable "control_plane_ips" {
   default = []
 }
 
+variable "control_plane_macs" {
+  type    = "list"
+  default = []
+}
 //////////
 // Compute machine variables
 //////////
@@ -136,3 +149,9 @@ variable "compute_ips" {
   type    = "list"
   default = []
 }
+
+variable "compute_macs" {
+  type    = "list"
+  default = []
+}
+

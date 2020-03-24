@@ -34,6 +34,8 @@ module "bootstrap" {
   datastore        = "${var.vsphere_datastore}"
   folder           = "${module.folder.path}"
   network          = "${var.vm_network}"
+  mac              = ["${var.bootstrap_mac}"]
+  use_mac          = "${var.use_static_mac}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
@@ -55,6 +57,8 @@ module "control_plane" {
   folder           = "${module.folder.path}"
   datastore        = "${var.vsphere_datastore}"
   network          = "${var.vm_network}"
+  mac              = ["${var.control_plane_macs}"]
+  use_mac          = "${var.use_static_mac}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
@@ -76,6 +80,8 @@ module "compute" {
   folder           = "${module.folder.path}"
   datastore        = "${var.vsphere_datastore}"
   network          = "${var.vm_network}"
+  mac              = ["${var.compute_macs}"]
+  use_mac          = "${var.use_static_mac}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
@@ -83,7 +89,7 @@ module "compute" {
   ipam_token       = "${var.ipam_token}"
   ip_addresses     = ["${var.compute_ips}"]
   machine_cidr     = "${var.machine_cidr}"
-  memory           = "8192"
+  memory           = "16384"
   num_cpu          = "4"
 }
 

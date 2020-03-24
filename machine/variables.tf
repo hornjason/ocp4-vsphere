@@ -32,6 +32,15 @@ variable "network" {
   type = "string"
 }
 
+#JTH Added mac address functionality
+variable "mac" {
+  type = "list"
+}
+
+variable "use_mac" {
+  type = "string"
+}
+
 variable "cluster_domain" {
   type = "string"
 }
