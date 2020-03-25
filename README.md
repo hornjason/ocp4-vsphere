@@ -282,6 +282,10 @@ change DNS1 = "dns server"
     // Token to use to authenticate with the IPAM server.
     ipam_token = "TOKEN_FOR_THE_IPAM_SERVER"
     */ END  IPAM
+
+
+    // Use Static Macs
+    use_static_mac = "true"
     
     // Set bootstrap_ip, control_plane_ip, and compute_ip if you want to use static
     // IPs reserved someone else, rather than the IPAM server.
@@ -289,15 +293,17 @@ change DNS1 = "dns server"
     // The IP address to assign to the bootstrap VM.
     // These are on the same network as 'machine_cidr'
     bootstrap_ip = "10.0.0.10"
+    bootstrap_mac = "00:50:56:AB:4B:27"
     
     // The IP addresses to assign to the control plane VMs. The length of this list
     // must match the value of control_plane_count.
     control_plane_ips = ["10.0.0.20", "10.0.0.21", "10.0.0.22"]
+    control_plane_macs = ["00:50:56:AB:5E:FF","00:50:56:AB:FA:D3", "00:50:56:AB:93:DC"]
     
     // The IP addresses to assign to the compute VMs. The length of this list must
     // match the value of compute_count.
     compute_ips = ["10.0.0.30", "10.0.0.31", "10.0.0.32"]
-
+    compute_macs = ["00:50:56:AB:F5:7E","00:50:56:AB:4D:EA", "00:50:56:AB:D7:CF"]
 ## install-config.yaml
 
     apiVersion: v1
