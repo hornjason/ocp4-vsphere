@@ -5,8 +5,8 @@ OCP_DIR="ocp-43"
 
 echo "Creating ocp dir "
 [ ! -d "${OCP_DIR}" ] && mkdir ${OCP_DIR} 
-cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
-sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
+#cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
+#sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
 #exit
 cp install-config.yaml ${OCP_DIR} &&  
 openshift-install create ignition-configs --dir ${OCP_DIR}
