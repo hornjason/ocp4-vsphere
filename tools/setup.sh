@@ -6,6 +6,8 @@ env="env"
 project=$(git rev-parse --show-toplevel)
 ocp_wdir="${project}/${env}/${OCP_DIR}"
 
+source ${project}/profile.env
+
 echo "Creating ocp [ ${ocp_wdir} ] dir "
 [ ! -d "${ocp_wdir}" ] && mkdir "${env_path}/${OCP_DIR}"
 #cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
