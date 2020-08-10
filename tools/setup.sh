@@ -1,9 +1,8 @@
 #!/bin/bash
 
 #
-#OCP_DIR="ocp-45-managed"
-echo "$OCP_DIR"
-exit
+OCP_DIR="ocp-43"
+
 echo "Creating ocp dir "
 [ ! -d "${OCP_DIR}" ] && mkdir ${OCP_DIR} 
 #cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
