@@ -1,4 +1,4 @@
 #!/bin/bash
-DIR="ocp-42"
+# OCP_DIR = Branch name from profile.env
 terraform destroy -force
-rm -rf  ${DIR}
+rm -rf  ${OCP_DIR}
