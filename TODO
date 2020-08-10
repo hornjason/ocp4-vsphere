@@ -1,0 +1,6 @@
+# 1: environments are created based on branch name so name appropriately
+#
+# 2: // Password of the user on the vSphere server.
+# // this comes from profile.env which uses the env var VMWARE_PASSWORD
+# //vsphere_password = ""
+#
