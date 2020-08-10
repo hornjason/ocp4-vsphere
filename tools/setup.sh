@@ -26,7 +26,6 @@ sed -i '/^control_plane_ignition/!b;n;c'"$MASTER_IGNITION"'' ${project}/infra/te
 ##
 echo "bootstrap_complete = "false""
 sed 's/bootstrap_complete.*/bootstrap_complete = "false"/' ${project}/infra/terraform.tfvars
-exit
 cd ${project}/infra ; terraform apply -auto-approve &&
 cd ${project} ; openshift-install --dir ${ocp_wdir}  wait-for bootstrap-complete &&
 sleep 60 && cd ${project}/infra ; terraform apply -auto-approve -var 'bootstrap_complete=true' &&
