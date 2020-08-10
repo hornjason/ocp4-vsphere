@@ -12,8 +12,7 @@ echo "Creating ocp [ ${ocp_wdir} ] dir "
 [ ! -d "${ocp_wdir}" ] && mkdir "${env_path}/${OCP_DIR}"
 #cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
 #sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
-#exit
-cp install-config.yaml ${ocp_wdir} &&  
+cp ${project}/env/install-config.yaml ${ocp_wdir} &&  
 openshift-install create ignition-configs --dir ${ocp_wdir}
 rm -f /var/www/html/ignition/bootstrap.ign
 cp ${ocp_wdir}/bootstrap.ign /var/www/html/ignition/bootstrap.ign
@@ -28,9 +27,9 @@ sed -i '/^control_plane_ignition/!b;n;c'"$MASTER_IGNITION"'' ${project}/infra/te
 ##
 echo "bootstrap_complete = "false""
 sed 's/bootstrap_complete.*/bootstrap_complete = "false"/' ${project}/infra/terraform.tfvars
-cd ${project}/infra ; terraform apply -auto-approve &&
+cd ${project}/infra ; terraform init ${project}/infra &&  terraform apply -auto-approve &&
+
 cd ${project} ; openshift-install --dir ${ocp_wdir}  wait-for bootstrap-complete &&
-exit
 sleep 60 && cd ${project}/infra ; terraform apply -auto-approve -var 'bootstrap_complete=true' &&
 cd ${project} ; openshift-install --dir ${ocp_wdir} wait-for install-complete
 # after install change bootstrap_complete = 'true'
