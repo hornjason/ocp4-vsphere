@@ -30,6 +30,7 @@ echo "bootstrap_complete = "false""
 sed 's/bootstrap_complete.*/bootstrap_complete = "false"/' ${project}/infra/terraform.tfvars
 cd ${project}/infra ; terraform apply -auto-approve &&
 cd ${project} ; openshift-install --dir ${ocp_wdir}  wait-for bootstrap-complete &&
+exit
 sleep 60 && cd ${project}/infra ; terraform apply -auto-approve -var 'bootstrap_complete=true' &&
 cd ${project} ; openshift-install --dir ${ocp_wdir} wait-for install-complete
 # after install change bootstrap_complete = 'true'
