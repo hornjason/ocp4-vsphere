@@ -1,6 +1,6 @@
 #!/bin/bash
 # OCP_DIR = Branch name from profile.env
-source ${GIT_ROOT}/profile.env
+source $(git rev-parse --show-toplevel)/profile.env
 
-terraform destroy -force
-rm -rf  ${OCP_DIR}
+cd ${GIT_ROOT}/infra && terraform destroy -force  &&
+rm -rf  ${GIT_ROOT}/env/${OCP_DIR}

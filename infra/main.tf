@@ -73,7 +73,7 @@ module "control_plane" {
 module "compute" {
   source = "./machine"
 
-  name             = "compute"
+  name             = "worker"
   instance_count   = "${var.compute_count}"
   ignition         = "${var.compute_ignition}"
   resource_pool_id = "${module.resource_pool.pool_id}"
@@ -89,8 +89,8 @@ module "compute" {
   ipam_token       = "${var.ipam_token}"
   ip_addresses     = ["${var.compute_ips}"]
   machine_cidr     = "${var.machine_cidr}"
-  memory           = "16384"
-  num_cpu          = "4"
+  memory           = "${var.compute_memory}"
+  num_cpu          = "${var.compute_cpu}"
 }
 
 /*

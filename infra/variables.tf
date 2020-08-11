@@ -141,6 +141,16 @@ variable "compute_count" {
   default = "3"
 }
 
+variable "compute_cpu" {
+  type    = "string"
+  default = "2"
+}
+
+variable "compute_memory" {
+  type    = "string"
+  default = "8192"
+}
+
 variable "compute_ignition" {
   type = "string"
 }

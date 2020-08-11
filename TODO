@@ -3,4 +3,7 @@
 # 2: // Password of the user on the vSphere server.
 # // this comes from profile.env which uses the env var VMWARE_PASSWORD
 # //vsphere_password = ""
-#
+# // Setup in profile.env with TF_VAR_vsphere_password
+# // Commented out in terraform.tvars
+# Template install-config.yaml to use branch name as cluster-id
+# # Template terraform.tvars to use branch name as cluster-id#
