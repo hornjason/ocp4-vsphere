@@ -7,3 +7,4 @@
 # // Commented out in terraform.tvars
 # Template install-config.yaml to use branch name as cluster-id
 # # Template terraform.tvars to use branch name as cluster-id#
+# // Add approve_csr.sh to while loop in setup.sh after bootstrap complete,  checking for anything
