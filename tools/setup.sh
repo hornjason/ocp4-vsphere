@@ -16,7 +16,7 @@ cp -Rf ${GIT_ROOT}/infra/ ${ocp_wdir}/ && mv ${ocp_wdir}/infra/terraform.tfvars.
 #sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
 # Template install-config.yaml to use branch name as cluster-id
 # Template terraform.tvars to use branch name as cluster-id
-cp ${GIT_ROOT}/env/install-config.yaml ${ocp_wdir} &&  
+cp ${GIT_ROOT}/env/install-config.yaml.${OCP_DIR}  ${ocp_wdir}/install-config.yaml &&  
 openshift-install create ignition-configs --dir ${ocp_wdir} &&
 rm -f /var/www/html/ignition/bootstrap.ign
 cp ${ocp_wdir}/bootstrap.ign /var/www/html/ignition/bootstrap.ign
