@@ -10,13 +10,13 @@ ocp_wdir="${GIT_ROOT}/${env}/${OCP_DIR}"
 
 echo "Creating ocp [ ${ocp_wdir} ] dir "
 [ ! -d "${ocp_wdir}" ] && mkdir "${ocp_wdir}"
-cp -Rf ${GIT_ROOT}/infra/ ${ocp_wdir}/ &&
+cp -Rf ${GIT_ROOT}/infra/ ${ocp_wdir}/ && mv ${ocp_wdir}/infra/terraform.tfvars.${OCP_DIR} ${ocp_wdir}/infra/terraform.tfvars &&
 # copy terraform code to ephermeral ocp_wdir so not to interfere with other branches
 #cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
 #sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
 # Template install-config.yaml to use branch name as cluster-id
 # Template terraform.tvars to use branch name as cluster-id
-cp ${GIT_ROOT}/env/install-config.yaml ${ocp_wdir} &&  
+cp ${GIT_ROOT}/env/install-config.yaml.${OCP_DIR}  ${ocp_wdir}/install-config.yaml &&  
 openshift-install create ignition-configs --dir ${ocp_wdir} &&
 rm -f /var/www/html/ignition/bootstrap.ign
 cp ${ocp_wdir}/bootstrap.ign /var/www/html/ignition/bootstrap.ign
