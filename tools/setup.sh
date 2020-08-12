@@ -36,7 +36,7 @@ cd ${GIT_ROOT} ; openshift-install --dir ${ocp_wdir}  wait-for bootstrap-complet
 sleep 60 && cd ${ocp_wdir}/infra ; terraform apply -auto-approve -var 'bootstrap_complete=true' 
 
 # kick off approve_csr.sh
-nohup ${GIT_ROOT}/tools/approve_csr.sh > approve_csr 2>&1 & 
+nohup ${GIT_ROOT}/tools/approve_csr.sh & #> approve_csr 2>&1 & 
 cd ${GIT_ROOT} ; openshift-install --dir ${ocp_wdir} wait-for install-complete 
 # after install change bootstrap_complete = 'true'
 echo "bootstrap_complete = "true""
