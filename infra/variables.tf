@@ -88,6 +88,18 @@ variable "use_static_mac" {
   default = "false"
 }
 
+variable "gw" {
+  type    = "string"
+  description = "The default Gateway to use."
+}
+
+variable "dns1" {
+  type    = "string"
+  description = "The NameServer to use for DNS"
+  default = "false"
+}
+
+
 /////////
 // Bootstrap machine variables
 /////////

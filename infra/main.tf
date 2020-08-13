@@ -36,6 +36,8 @@ module "bootstrap" {
   network          = "${var.vm_network}"
   mac              = ["${var.bootstrap_mac}"]
   use_mac          = "${var.use_static_mac}"
+  gw		   = "${var.gw}"
+  dns1		   = "${var.dns1}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
@@ -45,6 +47,7 @@ module "bootstrap" {
   machine_cidr     = "${var.machine_cidr}"
   memory           = "8192"
   num_cpu          = "4"
+  
 }
 
 module "control_plane" {
@@ -59,6 +62,8 @@ module "control_plane" {
   network          = "${var.vm_network}"
   mac              = ["${var.control_plane_macs}"]
   use_mac          = "${var.use_static_mac}"
+  gw		   = "${var.gw}"
+  dns1		   = "${var.dns1}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
@@ -82,6 +87,8 @@ module "compute" {
   network          = "${var.vm_network}"
   mac              = ["${var.compute_macs}"]
   use_mac          = "${var.use_static_mac}"
+  gw		   = "${var.gw}"
+  dns1		   = "${var.dns1}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
   template         = "${var.vm_template}"
   cluster_domain   = "${var.cluster_domain}"
