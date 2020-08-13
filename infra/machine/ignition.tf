@@ -4,7 +4,10 @@ provider "ignition" {
 
 locals {
   mask = "${element(split("/", var.machine_cidr), 1)}"
-  gw   = "192.168.1.1"
+//  gw   = "${var.gw}"
+//  dns1 = "${var.dns1}"
+//  dns2 = "${var.dns2}"
+  
 
   ignition_encoded = "data:text/plain;charset=utf-8;base64,${base64encode(var.ignition)}"
 }
@@ -37,10 +40,10 @@ DEVICE=ens192
 ONBOOT=yes
 IPADDR=${local.ip_addresses[count.index]}
 PREFIX=${local.mask}
-GATEWAY=${local.gw}
+GATEWAY=${var.gw}
 DOMAIN=${var.cluster_domain}
-DNS1=192.168.1.1
-DNS2=9.9.9.9
+DNS1=${var.dns1}
+DNS2=
 EOF
   }
 }

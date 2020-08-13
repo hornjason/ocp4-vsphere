@@ -37,6 +37,14 @@ variable "mac" {
   type = "list"
 }
 
+variable "dns1" {
+  type = "string"
+}
+
+variable "gw" {
+  type = "string"
+}
+
 variable "use_mac" {
   type = "string"
 }

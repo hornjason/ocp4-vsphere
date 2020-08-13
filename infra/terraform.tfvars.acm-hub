@@ -1,11 +1,11 @@
 // ID identifying the cluster to create. Use your username so that resources created can be tracked back to you.
-cluster_id = "ocp4"
+cluster_id = "hub"
 
 // Domain of the cluster. This should be "${cluster_id}.${base_domain}".
-cluster_domain = "ocp4.foo.bar"
+cluster_domain = "hub.foo.bar"
 
 // Base domain from which the cluster domain is a subdomain.
-base_domain = "ocp4.foo.bar"
+base_domain = "hub.foo.bar"
 
 // Name of the vSphere server. The dev cluster is on "vcsa.vmware.devcluster.openshift.com".
 vsphere_server = "photon-machine.foo.bar"
@@ -37,7 +37,7 @@ vm_template = "coreos"
 
 // The machine_cidr where IP addresses will be assigned for cluster nodes.
 // Additionally, IPAM will assign IPs based on the network ID. 
-machine_cidr = "192.168.1.0/24" # where your VMs will live , the same as in the install-config.yaml
+machine_cidr = "192.168.7.0/24" # where your VMs will live , the same as in the install-config.yaml
 
 // URL of the bootstrap ignition. This needs to be publicly accessible so that the bootstrap machine can pull the ignition.
 bootstrap_ignition_url = "http://util.foo.bar:8080/ignition/bootstrap.ign"
@@ -78,21 +78,27 @@ compute_cpu = "2"
 // Use Static Macs
 use_static_mac = "true"
 
+// Set GW
+gw = "192.168.7.1"
+
+// Set DNS1
+dns1 = "192.168.1.1"
+
 //    mac_address = "${var.static_mac}"
 // False is default and will create the bootstrap VM
 // True is used when scaling up compute nodes after installation.
 bootstrap_complete = "False"
 
 // The IP address to assign to the bootstrap VM.
-bootstrap_ip = "192.168.1.50"
+bootstrap_ip = "192.168.7.50"
 bootstrap_mac = "00:50:56:AB:4B:27"
 
 // The IP addresses to assign to the control plane VMs. The length of this list
 // must match the value of control_plane_count.
-control_plane_ips = ["192.168.1.51", "192.168.1.52", "192.168.1.53"]
+control_plane_ips = ["192.168.7.51", "192.168.7.52", "192.168.7.53"]
 control_plane_macs = ["00:50:56:AB:5E:FF","00:50:56:AB:FA:D3", "00:50:56:AB:93:DC"]
 
 // The IP addresses to assign to the compute VMs. The length of this list must
 // match the value of compute_count.
-compute_ips = ["192.168.1.54" , "192.168.1.55" , "192.168.1.56" ] // , "192.168.1.67" , "192.168.1.68", "192.168.1.69" ]
+compute_ips = ["192.168.7.54" , "192.168.7.55" , "192.168.7.56" ] // , "192.168.7.57" , "192.168.7.58", "192.168.7.59" ]
 compute_macs = ["00:50:56:AB:F5:7E" , "00:50:56:AB:4D:EA"  , "00:50:56:AB:D7:CF" ] // #, "00:50:56:AB:D7:EA", "00:50:56:AB:D7:7E", "00:50:56:AB:4D:CF"]
