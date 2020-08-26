@@ -10,7 +10,7 @@ ocp_wdir="${GIT_ROOT}/${env}/${OCP_DIR}"
 
 echo "Creating ocp [ ${ocp_wdir} ] dir "
 [ ! -d "${ocp_wdir}" ] && mkdir "${ocp_wdir}"
-cp -Rf ${GIT_ROOT}/infra/ ${ocp_wdir}/ && mv ${ocp_wdir}/infra/terraform.tfvars.${OCP_DIR} ${ocp_wdir}/infra/terraform.tfvars &&
+cp -Rf ${GIT_ROOT}/infra/ ${ocp_wdir}/infra/ && mv ${ocp_wdir}/infra/terraform.tfvars.${OCP_DIR} ${ocp_wdir}/infra/terraform.tfvars &&
 # copy terraform code to ephermeral ocp_wdir so not to interfere with other branches
 #cp install-config.yaml ${OCP_DIR} &&  openshift-install create manifests  --dir ${OCP_DIR}
 #sed -i 's/  mastersSchedulable: true/  mastersSchedulable: false/g' ${OCP_DIR}/manifests/cluster-scheduler-02-config.yml
