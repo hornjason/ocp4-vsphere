@@ -69,11 +69,11 @@ END_OF_WORKER_IGNITION
 control_plane_count = 3
 
 // The number of compute VMs to create. Default is 3.
-compute_count = 2
+compute_count = 3
 
 // Compute  cpu / memory
-compute_memory = "8192"
-compute_cpu = "2"
+compute_memory = "16384"
+compute_cpu = "4"
 
 // Use Static Macs
 use_static_mac = "true"
